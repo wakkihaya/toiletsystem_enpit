@@ -1,0 +1,55 @@
+<html>
+<header>
+  <div class="title">Which is your best toilet??</div>
+</header>
+
+<div id="framework">
+<div id = map>
+</div>
+</div>
+</html>
+<style type="text/css">
+  html{margin:0; padding:0;}
+
+  header{
+    background-image:url("/images/title_tsukuba.jpg");
+    opacity:0.5;
+    background-size: cover;
+    background-repeat:no-repeat;
+    position:fixed;
+    top:0;
+    width:100%;
+    height:100px;
+  }
+
+  .title{
+    line-height:100px;
+    font-family: "Palatino Linotype";
+    font-size:5vw;
+    color:#000;
+    text-align:center;
+  }
+
+  #framework{
+    height:600px;
+    padding:0 100px 100px 100px ;
+    margin-top:200px;
+
+  }
+  #map{
+    height:100%;
+  }
+</style>
+
+<script type="text/javascript">
+  L.Icon.Default.imagePath = "../assets";
+  var map = L.map("map").setView([36.11109, 140.10085],17);
+  var osmUrl = "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+  var osmAttrib = "Map data OpenstreetMap contibutors";
+  L.tileLayer(
+      osmUrl,{
+          attribution: osmAttrib,
+          maxZoom: 20.
+      }).addTo(map);
+
+</script>
