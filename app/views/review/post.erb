@@ -1,0 +1,79 @@
+<html>
+ <div id="review_frame">
+
+<!--   場所-->
+   <div class="place_frame">
+      <p>場所</p>
+     <input type="text" id="place" placeholder="例:2D棟">
+   </div>
+
+   <div class="comment_frame">
+     <p>コメント</p>
+   <textarea rows="5" cols="20" placeholder="例:最高なトイレ" id="comment"></textarea>
+   </div>
+
+   <button type="submit">送信</button>
+ </div>
+
+</html>
+
+<style>
+  #review_frame{
+    font-family:"Roboto";
+    height:80vh;
+    position:relative;
+    top:10vh;
+    background:#D4EBF8;
+  }
+
+    .place_frame{
+      position:absolute;
+      top:10vh;
+      width:80%;
+      left:0;
+      right:0;
+      margin:auto;
+    }
+
+    .comment_frame{
+      position:absolute;
+      top:35vh;
+      left:0;
+      right:0;
+      margin:auto;
+      width:80%;
+    }
+
+    #place,#comment{
+      font-size:40px;
+      width:100%;
+      border-radius:10px;
+    }
+
+    #place{
+      height:50px;
+    }
+
+    #comment{
+      height:200px;
+    }
+
+    p{
+      font-size:3vh;
+      font-weight:bold;
+    }
+
+    button{
+      bottom:5vh;
+      position:absolute;
+      width:30%;
+      left:0;
+      right:0;
+      margin:auto;
+      font-size:3vh;
+      background:#2D9CDB;
+      color:#fff;
+      border-radius:10px;
+    }
+
+</style>
