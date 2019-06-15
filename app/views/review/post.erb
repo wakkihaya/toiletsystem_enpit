@@ -4,20 +4,27 @@
 <!--   場所-->
    <div class="place_frame">
       <p>場所</p>
-     <input type="text" id="place" placeholder="例:2D棟">
+     <%= form_with(model: @toilet, local: true) do |f|%>
+     <%= f.text_field :place, :placeholder => "例; 2D棟" %>
    </div>
 
    <div class="comment_frame">
      <p>コメント</p>
-   <textarea rows="5" cols="20" placeholder="例:最高なトイレ" id="comment"></textarea>
+   <%= f.text_area :comment , :placeholder => "例: 最高なトイレ" %>
    </div>
 
-   <button type="submit">送信</button>
+   <%= f.submit "送信", :class => 'submit'%>
+  <% end %>
  </div>
 
 </html>
 
-<style>
+<!--送信してからデータに保存する流れが出来ていない。
+もし、名前が等しかったら、コメントは複数表示-->
+
+
+<style type="text/css">
+
   #review_frame{
     font-family:"Roboto";
     height:80vh;
@@ -63,7 +70,7 @@
       font-weight:bold;
     }
 
-    button{
+    .submit{
       bottom:5vh;
       position:absolute;
       width:30%;
@@ -75,5 +82,5 @@
       color:#fff;
       border-radius:10px;
     }
-
 </style>
+

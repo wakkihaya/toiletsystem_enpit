@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   root 'map#top'
 
   get 'post', to: 'review#post'
+  post 'toilets/new'
+
+
 end
