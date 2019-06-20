@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ReviewController < ApplicationController
-  def new
+  def post
     @toilet = Toilet.new
   end
 
@@ -9,9 +9,9 @@ class ReviewController < ApplicationController
     @toilet = Toilet.new(toilet_params)
     if @toilet.save
       # toiletの名前が一致したら、コメントを複数表示するaddリアクションにrender
-      render 'add'
+      render '/map/top'
     else
-      render 'new'
+      render './map/top'
     end
   end
 

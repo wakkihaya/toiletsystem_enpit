@@ -1,0 +1,17 @@
+                                      List of databases
+           Name           |   Owner   | Encoding | Collate |  Ctype  |   Access privileges   
+--------------------------+-----------+----------+---------+---------+-----------------------
+ hello_app_development    | wakkihaya | UTF8     | C.UTF-8 | C.UTF-8 | 
+ postgres                 | postgres  | UTF8     | C.UTF-8 | C.UTF-8 | 
+ sample_app_development   | wakkihaya | UTF8     | C.UTF-8 | C.UTF-8 | 
+ sample_app_test          | wakkihaya | UTF8     | C.UTF-8 | C.UTF-8 | 
+ template0                | postgres  | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+                          |           |          |         |         | postgres=CTc/postgres
+ template1                | postgres  | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+                          |           |          |         |         | postgres=CTc/postgres
+ todo_development         | wakkihaya | UTF8     | C.UTF-8 | C.UTF-8 | 
+ todo_test                | wakkihaya | UTF8     | C.UTF-8 | C.UTF-8 | 
+ toiletsystem_development | wakkihaya | UTF8     | C.UTF-8 | C.UTF-8 | 
+ toiletsystem_test        | wakkihaya | UTF8     | C.UTF-8 | C.UTF-8 | 
+(10 rows)
+
