@@ -14,7 +14,7 @@
   <tbody>
     <% @toilets.each do |toilet| %>
       <tr>
-        <td><%= toilet.name %></td>
+        <td><%= toilet.place %></td>
         <td><%= toilet.comment %></td>
         <td><%= link_to 'Show', toilet %></td>
         <td><%= link_to 'Edit', edit_toilet_path(toilet) %></td>

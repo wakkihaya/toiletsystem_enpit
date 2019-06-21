@@ -69,6 +69,14 @@
           maxZoom: 20.
       }).addTo(map);
 
+  var sampleIcon = L.icon({
+      iconUrl: "/images/map-marker-alt-solid.svg",
+      iconSize:[20,20],
+      popupAnchor:[0,-50],
+  });
+
+  L.marker([36.11061,140.10064],{icon:sampleIcon}).bindPopup("こんにちは").addTo(map);
+
   // var marker_3a = L.marker([36.1107, 140.10058]).addTo(map);
   //
   // marker_3a.setLatLng(e.latlng);

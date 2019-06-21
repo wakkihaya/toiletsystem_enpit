@@ -5,7 +5,10 @@ class ReviewController < ApplicationController
     @toilet = Toilet.new
   end
 
+  # postした後toiletsのcreateに飛んでる。
+
   def create
+    redirect_to '/'
     @toilet = Toilet.new(toilet_params)
     if @toilet.save
       # toiletの名前が一致したら、コメントを複数表示するaddリアクションにrender

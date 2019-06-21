@@ -5,7 +5,7 @@
    <div class="place_frame">
       <p>場所</p>
      <%= form_with(model: @toilet, local: true) do |f|%>
-     <%= f.text_field :place, :placeholder => "例: 2D棟" %>
+     <%= f.text_field :name, :placeholder => "例: 2D棟" %>
    </div>
 
    <div class="comment_frame">
@@ -52,13 +52,13 @@
       width:80%;
     }
 
-    #toilet_place,#toilet_comment{
+    #toilet_name,#toilet_comment{
       font-size:40px;
       width:100%;
       border-radius:10px;
     }
 
-    #toilet_place{
+    #toilet_name{
       height:50px;
     }
 

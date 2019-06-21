@@ -5,4 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Toilet.create({name: 'aiueo', comment: 'unn',});
+
+Toilet.create({name: 'aiueo', comment: 'unn',})
+
+# placeの初期設定
+Place.create({
+        name: '3A',
+        latitude: '36.11061',
+        longitude: '140.10064',
+        num: '4',
+         }
+)

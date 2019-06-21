@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'post', to: 'review#post'
   # post 'toilets/new'
 
-  post 'toilets/post' => 'map#top'
+  post 'post' => 'map#top'
   # submitを送信して戻るボタンがないのかな
 
 end

@@ -26,9 +26,11 @@ class ToiletsController < ApplicationController
   def create
     @toilet = Toilet.new(toilet_params)
 
+    # postした後ここにトンdる
+
     respond_to do |format|
       if @toilet.save
-        format.html { redirect_to @toilet, notice: 'Toilet was successfully created.' }
+        format.html { redirect_to '/', notice: 'Toilet was successfully created.' }
         format.json { render :show, status: :created, location: @toilet }
       else
         format.html { render :new }
