@@ -2,7 +2,7 @@ class MapController < ApplicationController
   def top
     @toilet = Toilet.all
 
-    @place = Place.all
+    @places = Place.all
   end
 
   def show
