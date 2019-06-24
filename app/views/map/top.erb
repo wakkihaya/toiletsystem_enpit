@@ -1,5 +1,9 @@
-<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
 
+<html>
+<body>
 <div id="component">
 <!--  検索画面-->
   <input type="search" id="search" placeholder="トイレを探す">
@@ -12,29 +16,29 @@
 </div>
 
   <div id = "modal-content">
-    <p>あいうえお</p>
-    <p><a id="modal-close" class="button-link">閉じる</a> </p>
+    <div id="place_title"><p>3A</p>
+      <a id="modal-close" class="button-close">
+      <i class="fas fa-times fa-2x" ></i>
+      </a>
+    </div>
+    <ul class="reviewlist">
+      <li><p>すごい</p></li>
+      <li><p>やべえ</p></li>
+    </ul>
+
   </div>
 
 
 </div>
-
-
-
-<!--<div>-->
-<%# @toilet.each do |toile| %>
-  <%#= toile.name %>
-<%# end %>
-<!--</div>-->
-
+</body>
 </html>
+
 <style type="text/css">
   html{margin:0; padding:0;}
 
 
   #component{
     position:relative;
-    z-index:0;
     top:10vh;
     background:#D4EBF8;
     height:80vh;
@@ -55,6 +59,8 @@
 
 
   #framework{
+    position:relative;
+    z-index:0;
     height:60vh;
     padding: 10vh 100px 10vh 100px ;
   }
@@ -70,11 +76,54 @@
     width:80%;
     height:70%;
     margin:1.5em auto 0;
-    padding:10px 20px;
+    padding:0;
     border:2px solid #aaa;
     background:#fff;
     z-index:2;
   }
+
+  #place_title{
+    margin:0;
+    padding:0;
+    height:10%;
+    width:100%;
+    background:rgba(0,0,0,0.9);
+    top:0;
+    display:flex;
+    flex-direction: row;
+    justify-items: center;
+  }
+
+  
+  #place_title p{
+    margin-left:5%;
+    font-size:1.5rem;
+    color:#fff;
+    text-align: center;
+    flex:90%;
+  }
+
+  .reviewlist{
+    padding: 0;
+    height:80%;
+    margin:0;
+  }
+
+  .reviewlist li{
+    display:table;
+    list-style-type: none;
+    font-size:1.3rem;
+    width:100%;
+    height:10%;
+    border-bottom:solid 1px #000;
+  }
+
+  .reviewlist li p{
+    text-align: center;
+    display:table-cell;
+    vertical-align: middle;
+  }
+
 
   .modal p{
     margin-top:1em;
@@ -84,15 +133,18 @@
     margin-top:0;
   }
 
+  .button-close{
+    flex:5%;
+    color:#fff;
+    width:100%;
+  }
 
-  .button-link{
-    color:#00f;
-    text-decoration:underline;
+  .button-close :hover{
+    cursor:pointer;
   }
 
   .button-link:hover{
     cursor:pointer;
-    color:#f00;
   }
 
   #modal-overlay{
@@ -109,6 +161,36 @@
 </style>
 
 <script type="text/javascript">
+  //なぜかセンタリングされない
+    function centeringModalSyncer(){
+
+        //画面(ウィンドウ)の幅を取得し、変数[w]に格納
+        var w = $(window).width();
+
+        //画面(ウィンドウ)の高さを取得し、変数[h]に格納
+        var h = $(window).height();
+
+        //コンテンツ(#modal-content)の幅を取得し、変数[cw]に格納
+        var cw = $("#modal-content").outerWidth({margin:true});
+
+        //コンテンツ(#modal-content)の高さを取得し、変数[ch]に格納
+        var ch = $("#modal-content").outerHeight({margin:true});
+
+        //コンテンツ(#modal-content)を真ん中に配置するのに、左端から何ピクセル離せばいいか？を計算して、変数[pxleft]に格納
+        var pxleft = ((w - cw)/2);
+
+        //コンテンツ(#modal-content)を真ん中に配置するのに、上部から何ピクセル離せばいいか？を計算して、変数[pxtop]に格納
+        var pxtop = ((h - ch)/2);
+
+        //[#modal-content]のCSSに[left]の値(pxleft)を設定
+        $("#modal-content").css({"left": pxleft + "px"});
+
+        //[#modal-content]のCSSに[top]の値(pxtop)を設定
+        $("#modal-content").css({"top": pxtop + "px"});
+
+    }
+
+  //地図の表示
   L.Icon.Default.imagePath = "../assets";
   var map = L.map("map").setView([36.11109, 140.10085],17);
   var osmUrl = "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
@@ -130,28 +212,36 @@
   // Placeデータベースの中身をmapに投影
   <% @places.each do |place| %>
 
-  var popup ="場所："+"<%= place.name %>"+ "<br>"
-      +"トイレの数：" + "<%= place.num %>" + "<br>"
-  + "<p><a id = 'modal-open' class = 'button-link'>レビューを見る</p>";
+  var container = $('<div />');
+
+  //レビューを見るボタン→modal表示
+  container.on('click','.button-link',function () {
+          $(this).blur();
+          if($("#modal-overlay")[0]) return false;
+          $('body').append("<div id='modal-overlay'></div>");
+          $("#modal-overlay").fadeIn("slow");
+          $("#modal-content").fadeIn("slow");
+      });
 
 
-      L.marker(['<%=place.latitude %>','<%= place.longitude %>'],{icon:sampleIcon}).bindPopup(popup).addTo(map);
-<% end %>
 
-    // レビューを見るボタンをクリックしたら、modal-windoが開く
+      container.html("場所："+"<%= place.name %>"+ "<br>" +"トイレの数：" + "<%= place.num %>" +"<br>"+
+          "<a id = 'modal-open' class = 'button-link'>レビューを見る</a>");
 
-    document.getElementById("modal-open").onclick =function () {
-            var overlay = document.getElementById("modal-overlay");
+      //popupとピンを表示
+      L.marker(['<%=place.latitude %>','<%= place.longitude %>'],{icon:sampleIcon}).bindPopup(container[0]).addTo(map);
+  <% end %>
 
-            this.blur();
-            if(overlay) return false;
-
-            document.body.append('<div id="modal-overlay"></div>');
-            overlay.fadeIn("slow");
-
-            document.getElementById("modal-content").fadeIn("slow");
-        };
+  //modalを終了sる
+    $("#modal-overlay,#modal-close").unbind().click(function () {
+        $("#modal-content,#modal-overlay").fadeOut("slow",function () {
+            $("#modal-overlay").remove();
+        })
+    });
 
 
 
 </script>
+
+
+
