@@ -251,7 +251,7 @@
           "<a id = 'modal-open' class = 'button-link'>レビューを見る</a>");
 
       //popupとピンを表示
-  L.marker(['<%=place.latitude %>','<%= place.longitude %>'],{icon:sampleIcon,opacity: 0.4}).bindPopup(container[0]).addTo(map);
+  L.marker(['<%=place.latitude %>','<%= place.longitude %>'],{icon:sampleIcon,opacity: 0.4,}).bindPopup(container[0]).addTo(map);
 
   <% end %>
 
