@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ReviewController < ApplicationController
-  def post
+  def new
     @toilet = Toilet.new
   end
 
