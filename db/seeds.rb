@@ -6,7 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Toilet.create({name: 'aiueo', comment: 'unn',})
+Toilet.create({name: '3A', comment: 'うんちぶりぶり',})
+Toilet.create({name: '3C', comment: 'うんちおせち',})
+
+Toilet.create({name: '3A', comment: 'aiueo',})
+Toilet.create({name: '3C', comment: 'やまだ',})
+
 
 # placeの初期設定
 Place.create({
@@ -15,4 +20,13 @@ Place.create({
         longitude: '140.10064',
         num: '4',
          }
+)
+
+
+Place.create({
+                name: '3C',
+                latitude: '36.11023',
+                longitude: '140.10034',
+                num: '4',
+            }
 )

@@ -15,15 +15,17 @@
 </div>
 </div>
 
+<!--  modalウィンドウには、DBからとってきたものを載せる。-->
+<!--  変動する値のみ、js野中でかく-->
   <div id = "modal-content">
-    <div id="place_title"><p>3A</p>
+    <div id="place_title">
+      <p>
+      </p>
       <a id="modal-close" class="button-close">
-      <i class="fas fa-times fa-2x" ></i>
+        <i class="fas fa-times fa-2x" ></i>
       </a>
     </div>
     <ul class="reviewlist">
-      <li><p>すごい</p></li>
-      <li><p>やべえ</p></li>
     </ul>
 
   </div>
@@ -208,14 +210,30 @@
       // popupAnchor:[0,-50],
   });
 
-
   // Placeデータベースの中身をmapに投影
   <% @places.each do |place| %>
+
 
   var container = $('<div />');
 
   //レビューを見るボタン→modal表示
   container.on('click','.button-link',function () {
+
+      //li要素を削除
+      $('.reviewlist li').remove();
+
+      // クリックされたら、そのplaceを入れる
+      $('#place_title p').html('<%=place.name %>');
+
+      //place.nameの名前とtoile.nameが一致したら、そのレビューを持ってく
+      <% @toiletreview = Toilet.where(name: place.name) %>
+      <%  @toiletreview.each do |toiletsingle| %>
+
+
+      $('.reviewlist').append('<li><p><%=toiletsingle.comment %> </p></li>');
+      <% end %>
+
+      //modal-windowの表示
           $(this).blur();
           if($("#modal-overlay")[0]) return false;
           $('body').append("<div id='modal-overlay'></div>");
@@ -223,13 +241,12 @@
           $("#modal-content").fadeIn("slow");
       });
 
-
-
       container.html("場所："+"<%= place.name %>"+ "<br>" +"トイレの数：" + "<%= place.num %>" +"<br>"+
           "<a id = 'modal-open' class = 'button-link'>レビューを見る</a>");
 
       //popupとピンを表示
-      L.marker(['<%=place.latitude %>','<%= place.longitude %>'],{icon:sampleIcon}).bindPopup(container[0]).addTo(map);
+  L.marker(['<%=place.latitude %>','<%= place.longitude %>'],{icon:sampleIcon}).bindPopup(container[0]).addTo(map);
+
   <% end %>
 
   //modalを終了sる
