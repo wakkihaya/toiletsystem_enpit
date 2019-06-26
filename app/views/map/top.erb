@@ -82,6 +82,7 @@
     border:2px solid #aaa;
     background:rgba(255,255,255,0.8);
     z-index:2;
+    max-height:70%;
   }
 
   #place_title{
@@ -123,6 +124,7 @@
   .reviewlist li p{
     font-family: "Yu Gothic UI";
     font-weight:bold;
+    font-size:1.2rem;
     text-align: center;
     display:table-cell;
     vertical-align: middle;
@@ -147,8 +149,18 @@
     cursor:pointer;
   }
 
+  .button-link{
+    color:#f00;
+  }
+
+  #modal-open {
+    text-decoration: underline;
+    color:#f00;
+  }
+
   .button-link:hover{
     cursor:pointer;
+    background:#D4EBF8;
   }
 
   #modal-overlay{
@@ -249,6 +261,7 @@
 
       container.html("場所："+"<%= place.name %>"+ "<br>" +"トイレの数：" + "<%= place.num %>" +"<br>"+
           "<a id = 'modal-open' class = 'button-link'>レビューを見る</a>");
+      container.css("font-family","Yu Gothic UI");
 
       //popupとピンを表示
   L.marker(['<%=place.latitude %>','<%= place.longitude %>'],{icon:sampleIcon,opacity: 0.4,}).bindPopup(container[0]).addTo(map);
