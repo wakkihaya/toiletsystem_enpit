@@ -12,10 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_06_21_065748) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "places", force: :cascade do |t|
+  create_table "places", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.float "latitude"
     t.float "longitude"
@@ -24,14 +21,7 @@ ActiveRecord::Schema.define(version: 2019_06_21_065748) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "toiles", force: :cascade do |t|
-    t.string "name"
-    t.string "comment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "toilets", force: :cascade do |t|
+  create_table "toilets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "comment"
     t.datetime "created_at", null: false
