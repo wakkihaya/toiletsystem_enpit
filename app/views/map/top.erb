@@ -5,24 +5,24 @@
 <html>
 <body>
 <div id="component">
-<!--  検索画面-->
+  <!--  検索画面-->
   <input type="search" id="search" placeholder="トイレを探す">
 
 
-<!--  地図表示-->
-<div id="framework">
-<div id = map>
-</div>
-</div>
+  <!--  地図表示-->
+  <div id="framework">
+    <div id=map>
+    </div>
+  </div>
 
-<!--  modalウィンドウには、DBからとってきたものを載せる。-->
-<!--  変動する値のみ、js野中でかく-->
-  <div id = "modal-content">
+  <!--  modalウィンドウには、DBからとってきたものを載せる。-->
+  <!--  変動する値のみ、js野中でかく-->
+  <div id="modal-content">
     <div id="place_title">
       <p>
       </p>
       <a id="modal-close" class="button-close">
-        <i class="fas fa-times fa-2x" ></i>
+        <i class="fas fa-times fa-2x"></i>
       </a>
     </div>
     <ul class="reviewlist">
@@ -36,154 +36,157 @@
 </html>
 
 <style type="text/css">
-  html{margin:0; padding:0;}
-
-
-  #component{
-    position:relative;
-    top:10vh;
-    background:#D4EBF8;
-    height:80vh;
-  }
-
-  #search{
-    position:absolute;
-    top:3vh;
-    left:0;
-    right:0;
-    width:80%;
-    height:50px;
-    margin:auto;
-    border-radius:10px;
-    font-size:30px;
-    background:#fff;
+  html {
+    margin: 0;
+    padding: 0;
   }
 
 
-  #framework{
-    position:relative;
-    z-index:0;
-    height:60vh;
-    padding: 10vh 100px 10vh 100px ;
+  #component {
+    position: relative;
+    top: 10vh;
+    background: #D4EBF8;
+    height: 80vh;
   }
 
-  #map{
-    height:100%;
+  #search {
+    position: absolute;
+    top: 3vh;
+    left: 0;
+    right: 0;
+    width: 80%;
+    height: 50px;
+    margin: auto;
+    border-radius: 10px;
+    font-size: 30px;
+    background: #fff;
   }
 
-  #modal-content{
-    display:none;
-    position:absolute;
-    top:0;
-    width:80%;
-    height:70%;
-    margin:10%;
-    padding:0;
-    border:2px solid #aaa;
-    background:rgba(255,255,255,0.8);
-    z-index:2;
-    max-height:70%;
+
+  #framework {
+    position: relative;
+    z-index: 0;
+    height: 60vh;
+    padding: 10vh 100px 10vh 100px;
   }
 
-  #place_title{
-    margin:0;
-    padding:0;
-    height:10%;
-    width:100%;
-    background:rgba(0,0,0,0.9);
-    top:0;
-    display:flex;
+  #map {
+    height: 100%;
+  }
+
+  #modal-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 80%;
+    height: 70%;
+    margin: 10%;
+    padding: 0;
+    border: 2px solid #aaa;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 2;
+    max-height: 70%;
+  }
+
+  #place_title {
+    margin: 0;
+    padding: 0;
+    height: 10%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    top: 0;
+    display: flex;
     flex-direction: row;
     justify-items: center;
   }
 
-  
-  #place_title p{
-    margin-left:5%;
-    font-size:1.6rem;
-    color:#fff;
+
+  #place_title p {
+    margin-left: 5%;
+    font-size: 1.6rem;
+    color: #fff;
     text-align: center;
-    flex:90%;
+    flex: 90%;
   }
 
-  .reviewlist{
+  .reviewlist {
     padding: 0;
-    height:80%;
-    margin:0;
+    height: 80%;
+    margin: 0;
   }
 
-  .reviewlist li{
-    display:table;
+  .reviewlist li {
+    display: table;
     list-style-type: none;
-    font-size:1.3rem;
-    width:100%;
-    height:10%;
-    border-bottom:solid 1px #000;
+    font-size: 1.3rem;
+    width: 100%;
+    height: 10%;
+    border-bottom: solid 1px #000;
   }
 
-  .reviewlist li p{
+  .reviewlist li p {
     font-family: "Yu Gothic UI";
-    font-weight:bold;
-    font-size:1.4rem;
+    font-weight: bold;
+    font-size: 1.4rem;
     text-align: center;
-    display:table-cell;
+    display: table-cell;
     vertical-align: middle;
   }
 
 
-  .modal p{
-    margin-top:1em;
+  .modal p {
+    margin-top: 1em;
   }
 
-  .modal p:first-child{
-    margin-top:0;
+  .modal p:first-child {
+    margin-top: 0;
   }
 
-  .button-close{
-    flex:5%;
-    color:#fff;
-    width:100%;
+  .button-close {
+    flex: 5%;
+    color: #fff;
+    width: 100%;
   }
 
-  .button-close :hover{
-    cursor:pointer;
+  .button-close :hover {
+    cursor: pointer;
   }
 
-  .button-link{
-    color:#f00;
+  .button-link {
+    color: #f00;
   }
 
   #modal-open {
     text-decoration: underline;
-    color:#f00;
+    color: #f00;
   }
 
-  .button-link:hover{
-    cursor:pointer;
-    background:#D4EBF8;
+  .button-link:hover {
+    cursor: pointer;
+    background: #D4EBF8;
   }
 
-  #modal-overlay{
-    z-index:1;
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:120%;
-    background-color:rgba(0,0,0,0.75);
+  #modal-overlay {
+    z-index: 1;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background-color: rgba(0, 0, 0, 0.75);
   }
 
-  .leaflet-popup-content-wrapper{
-    font-size:1.4rem;
+  .leaflet-popup-content-wrapper {
+    font-size: 1.4rem;
   }
 
 
 </style>
 
 <script type="text/javascript">
-  //なぜかセンタリングされない
-    function centeringModalSyncer(){
+    //なぜかセンタリングされない
+    function centeringModalSyncer() {
 
         //画面(ウィンドウ)の幅を取得し、変数[w]に格納
         var w = $(window).width();
@@ -192,16 +195,16 @@
         var h = $(window).height();
 
         //コンテンツ(#modal-content)の幅を取得し、変数[cw]に格納
-        var cw = $("#modal-content").outerWidth({margin:true});
+        var cw = $("#modal-content").outerWidth({margin: true});
 
         //コンテンツ(#modal-content)の高さを取得し、変数[ch]に格納
-        var ch = $("#modal-content").outerHeight({margin:true});
+        var ch = $("#modal-content").outerHeight({margin: true});
 
         //コンテンツ(#modal-content)を真ん中に配置するのに、左端から何ピクセル離せばいいか？を計算して、変数[pxleft]に格納
-        var pxleft = ((w - cw)/2);
+        var pxleft = ((w - cw) / 2);
 
         //コンテンツ(#modal-content)を真ん中に配置するのに、上部から何ピクセル離せばいいか？を計算して、変数[pxtop]に格納
-        var pxtop = ((h - ch)/2);
+        var pxtop = ((h - ch) / 2);
 
         //[#modal-content]のCSSに[left]の値(pxleft)を設定
         $("#modal-content").css({"left": pxleft + "px"});
@@ -211,66 +214,69 @@
 
     }
 
-  //地図の表示
-  L.Icon.Default.imagePath = "../assets";
-  var map = L.map("map").setView([36.11109, 140.10085],17);
-  var osmUrl = "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
-  var osmAttrib = "Map data OpenstreetMap contibutors";
-  L.tileLayer(
-      osmUrl,{
-          attribution: osmAttrib,
-          maxZoom: 40.
-      }).addTo(map);
+    //地図の表示
+    L.Icon.Default.imagePath = "../assets";
+    var map = L.map("map").setView([36.11109, 140.10085], 17);
+    var osmUrl = "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+    var osmAttrib = "Map data OpenstreetMap contibutors";
+    L.tileLayer(
+        osmUrl, {
+            attribution: osmAttrib,
+            maxZoom: 40.
+        }).addTo(map);
 
-  var sampleIcon = L.icon({
-      iconUrl: "/images/map-marker-alt-solid.svg",
-      iconSize:[40,40],
-      // popupAnchor:[0,-50],
-  });
+    var sampleIcon = L.icon({
+        iconUrl: "/images/map-marker-alt-solid.svg",
+        iconSize: [40, 40],
+        // popupAnchor:[0,-50],
+    });
 
-  // Placeデータベースの中身をmapに投影
-  <% @places.each do |place| %>
-
-
-  var container = $('<div />');
-
-  //レビューを見るボタン→modal表示
-  container.on('click','.button-link',function () {
-
-      //li要素を削除
-      $('.reviewlist li').remove();
-
-      // クリックされたら、そのplaceを入れる
-      $('#place_title p').html('<%=place.name %>');
-
-      //place.nameの名前とtoile.nameが一致したら、そのレビューを持ってく
-      <% @toiletreview = Toilet.where(name: place.name) %>
-      <%  @toiletreview.each do |toiletsingle| %>
+    // Placeデータベースの中身をmapに投影
+    <% @places.each do |place| %>
 
 
-      $('.reviewlist').append('<li><p><%=toiletsingle.comment %> </p></li>');
-      <% end %>
+    var container = $('<div />');
 
-      //modal-windowの表示
-          $(this).blur();
-          if($("#modal-overlay")[0]) return false;
-          $('body').append("<div id='modal-overlay'></div>");
-          $("#modal-overlay").fadeIn("slow");
-          $("#modal-content").fadeIn("slow");
-      });
+    //レビューを見るボタン→modal表示
+    container.on('click', '.button-link', function () {
 
-      container.html("場所："+"<%= place.name %>"+ "<br>" +"トイレの数：" + "<%= place.num %>" +"<br>"+
-          "<a id = 'modal-open' class = 'button-link'>レビューを見る</a>");
-      container.css("font-family","Yu Gothic UI");
+        //li要素を削除
+        $('.reviewlist li').remove();
 
-      //popupとピンを表示
-  L.marker(['<%=place.latitude %>','<%= place.longitude %>'],{icon:sampleIcon,opacity: 0.4,}).bindPopup(container[0]).addTo(map);
+        // クリックされたら、そのplaceを入れる
+        $('#place_title p').html('<%=place.name %>');
 
-  <% end %>
+        //place.nameの名前とtoile.nameが一致したら、そのレビューを持ってく
+        <% @toiletreview = Toilet.where(name: place.name) %>
+        <%  @toiletreview.each do |toiletsingle| %>
 
-  //modalを終了sる
+
+        $('.reviewlist').append('<li><p><%=toiletsingle.comment %> </p></li>');
+        <% end %>
+
+        //modal-windowの表示
+        $(this).blur();
+        if ($("#modal-overlay")[0]) return false;
+        $('body').append("<div id='modal-overlay'></div>");
+        $("#modal-overlay").fadeIn("slow");
+        $("#modal-content").fadeIn("slow");
+    });
+
+    container.html("場所：" + "<%= place.name %>" + "<br>" + "トイレの数：" + "<%= place.num %>" + "<br>" +
+        "<a id = 'modal-open' class = 'button-link'>レビューを見る</a>");
+    container.css("font-family", "Yu Gothic UI");
+
+    //popupとピンを表示
+    L.marker(['<%=place.latitude %>', '<%= place.longitude %>'], {
+        icon: sampleIcon,
+        opacity: 0.4,
+    }).bindPopup(container[0]).addTo(map);
+
+    <% end %>
+
+    //modalを終了sる
     $("#modal-overlay,#modal-close").unbind().click(function () {
-        $("#modal-content,#modal-overlay").fadeOut("slow",function () {
+        $("#modal-content,#modal-overlay").fadeOut("slow", function () {
             $("#modal-overlay").remove();
         })
     });

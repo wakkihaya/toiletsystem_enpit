@@ -6,43 +6,43 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Toilet.create({name: '3C', comment: 'まじで3学の中で一番最高',})
+Toilet.create({name: '3C', comment: 'まじで3学の中で一番最高', })
 
-Toilet.create({name: '3C', comment: 'ウォシュレットあるわぁ',})
-Toilet.create({name: '3C', comment: '大体、情科のやつおる',})
-Toilet.create({name: '3C', comment: '授業中に抜け出していくと、大体埋まってる説',})
-Toilet.create({name: '3B', comment: 'とにかく暗い',})
-Toilet.create({name: '3B', comment: '狭い',})
-Toilet.create({name: '3B', comment: '後ろの置き棚が案外広くてよい',})
+Toilet.create({name: '3C', comment: 'ウォシュレットあるわぁ', })
+Toilet.create({name: '3C', comment: '大体、情科のやつおる', })
+Toilet.create({name: '3C', comment: '授業中に抜け出していくと、大体埋まってる説', })
+Toilet.create({name: '3B', comment: 'とにかく暗い', })
+Toilet.create({name: '3B', comment: '狭い', })
+Toilet.create({name: '3B', comment: '後ろの置き棚が案外広くてよい', })
 
-Toilet.create({name: '3E', comment: 'いかにも研究マンたちのやつ',})
-Toilet.create({name: '3E', comment: '消化されなかった研究が大量に出てくる',})
+Toilet.create({name: '3E', comment: 'いかにも研究マンたちのやつ', })
+Toilet.create({name: '3E', comment: '消化されなかった研究が大量に出てくる', })
 
-Toilet.create({name: '2D', comment: 'うんこ臭くなさそう',})
-Toilet.create({name: '2D', comment: 'ディズニー…？',})
+Toilet.create({name: '2D', comment: 'うんこ臭くなさそう', })
+Toilet.create({name: '2D', comment: 'ディズニー…？', })
 
-Toilet.create({name: '2C', comment: 'もうきれい',})
-Toilet.create({name: '2C', comment: 'ってか男子トイレある？',})
+Toilet.create({name: '2C', comment: 'もうきれい', })
+Toilet.create({name: '2C', comment: 'ってか男子トイレある？', })
 
-Toilet.create({name: '2B', comment: 'なんかグローバルそう',})
-Toilet.create({name: '2B', comment: 'とかいいつつ案外汚い',})
+Toilet.create({name: '2B', comment: 'なんかグローバルそう', })
+Toilet.create({name: '2B', comment: 'とかいいつつ案外汚い', })
 
 placeの初期設定
 Place.create({
-        name: '3A',
-        latitude: '36.11061',
-        longitude: '140.10064',
-        num: '4',
-         }
+                 name: '3A',
+                 latitude: '36.11061',
+                 longitude: '140.10064',
+                 num: '4',
+             }
 )
 
 
 Place.create({
-                name: '3C',
-                latitude: '36.11023',
-                longitude: '140.10034',
-                num: '4',
-            }
+                 name: '3C',
+                 latitude: '36.11023',
+                 longitude: '140.10034',
+                 num: '4',
+             }
 )
 
 Place.create({

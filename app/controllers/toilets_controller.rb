@@ -64,13 +64,14 @@ class ToiletsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_toilet
-      @toilet = Toilet.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def toilet_params
-      params.require(:toilet).permit(:name, :comment)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_toilet
+    @toilet = Toilet.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def toilet_params
+    params.require(:toilet).permit(:name, :comment)
+  end
 end

@@ -19,6 +19,7 @@ class ReviewController < ApplicationController
   end
 
   private
+
   def toilet_params
     params.require(:toilet).permit(:comment)
   end
