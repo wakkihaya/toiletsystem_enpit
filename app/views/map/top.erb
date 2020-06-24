@@ -232,8 +232,8 @@
 
     // Placeデータベースの中身をmapに投影
     <% @places.each do |place| %>
+    <% logger.debug(place) %>
 
-    console.log(<%= place%> 'dayo')
     var container = $('<div />');
 
     //レビューを見るボタン→modal表示

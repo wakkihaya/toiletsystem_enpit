@@ -27,7 +27,7 @@ Toilet.create({name: '2C', comment: 'ってか男子トイレある？', })
 Toilet.create({name: '2B', comment: 'なんかグローバルそう', })
 Toilet.create({name: '2B', comment: 'とかいいつつ案外汚い', })
 
-placeの初期設定
+# placeの初期設定
 Place.create({
                  name: '3A',
                  latitude: '36.11061',

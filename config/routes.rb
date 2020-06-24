@@ -7,6 +7,5 @@ Rails.application.routes.draw do
   # post 'toilets/new'
 
   post 'post' => 'map#top'
-  # submitを送信して戻るボタンがないのかな
 
 end
