@@ -3,9 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="69d0cc0c-8025-422f-91cf-d670f478d5d6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/map/top.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/map/top.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/review_controller.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/toilets_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/toilets_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/toilet.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/toilet.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/map/top.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/review/new.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/toilets/_form.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/toilets/_toilet.json.jbuilder" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/toilets/edit.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/toilets/index.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/toilets/index.json.jbuilder" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/toilets/new.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/toilets/show.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/toilets/show.json.jbuilder" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -185,7 +197,7 @@
       <workItem from="1561540606184" duration="707000" />
       <workItem from="1592889752829" duration="2766000" />
       <workItem from="1592910849064" duration="4597000" />
-      <workItem from="1592995605060" duration="1103000" />
+      <workItem from="1592995605060" duration="3825000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,91 @@
-<h1>New Toilet</h1>
+<html>
+<div id="review_frame">
 
-<%= render 'form', toilet: @toilet %>
+  <!--   場所-->
+  <%= form_with(model: @toilet, local: true) do |f| %>
+    <% if @toilet.errors.any? %>
+      <% @toilet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    <% end %>
+    <div class="place_frame">
+      <p>場所</p>
+      <%= f.text_field :name, :placeholder => "例: 2D棟" %>
+    </div>
 
-<%= link_to 'Back', toilets_path %>
+    <div class="comment_frame">
+      <p>コメント</p>
+      <%= f.text_area :comment, :placeholder => "例: 最高なトイレ" %>
+    </div>
+
+    <%= f.submit "送信", :class => 'submit' %>
+  <% end %>
+</div>
+
+</html>
+
+    <!--送信してからデータに保存する流れが出来ていない。
+    もし、名前が等しかったら、コメントは複数表示-->
+
+
+<style type="text/css">
+
+      #review_frame {
+        font-family: "Roboto";
+        width: 100vw;
+        height: 80vh;
+        position: relative;
+        top: 10vh;
+        background: white;
+      }
+
+      .place_frame {
+        position: absolute;
+        top: 10vh;
+        width: 80%;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+
+      .comment_frame {
+        position: absolute;
+        top: 35vh;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 80%;
+      }
+
+      #toilet_name, #toilet_comment {
+        font-size: 40px;
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      #toilet_name {
+        height: 50px;
+      }
+
+      #toilet_comment {
+        height: 200px;
+      }
+
+      p {
+        font-size: 3vh;
+        font-weight: bold;
+      }
+
+      .submit {
+        bottom: 5vh;
+        position: absolute;
+        width: 30%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        font-size: 3vh;
+        background: #2D9CDB;
+        color: #fff;
+        border-radius: 10px;
+      }
+</style>

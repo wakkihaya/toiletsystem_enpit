@@ -33,7 +33,7 @@ class ToiletsController < ApplicationController
         format.html { redirect_to '/', notice: 'Toilet was successfully created.' }
         format.json { render :show, status: :created, location: @toilet }
       else
-        format.html { render :new }
+        format.html { render 'new' }
         format.json { render json: @toilet.errors, status: :unprocessable_entity }
       end
     end
