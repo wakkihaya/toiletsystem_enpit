@@ -1,16 +1,16 @@
 class ToiletsController < ApplicationController
-  before_action :set_toilet, only: [:show, :edit, :update, :destroy]
+  # before_action :set_toilet, only: [:show, :edit, :update, :destroy]
 
   # GET /toilets
   # GET /toilets.json
-  def index
-    @toilets = Toilet.all
-  end
+  # def index
+  #   @toilets = Toilet.all
+  # end
 
   # GET /toilets/1
   # GET /toilets/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /toilets/new
   def new
@@ -18,25 +18,21 @@ class ToiletsController < ApplicationController
   end
 
   # GET /toilets/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /toilets
   # POST /toilets.json
   def create
+    place = Place.where(id: toilet_params[:place]).select('name')
+    puts place
+    toilet_params[:place] = place #ここのplace(3D)が渡されていないみたい
+    puts toilet_params
     @toilet = Toilet.new(toilet_params)
 
-    # postした後ここにトンdる
-
-    respond_to do |format|
-      if @toilet.save
-        format.html { redirect_to '/', notice: 'Toilet was successfully created.' }
-        format.json { render :show, status: :created, location: @toilet }
-      else
-        format.html { render 'new' }
-        format.json { render json: @toilet.errors, status: :unprocessable_entity }
-      end
-    end
+     if @toilet.save
+        redirect_to '/'
+     end
   end
 
   # PATCH/PUT /toilets/1
@@ -72,6 +68,6 @@ class ToiletsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def toilet_params
-    params.require(:toilet).permit(:name, :comment)
+    params.require(:toilet).permit(:place, :comment)
   end
 end

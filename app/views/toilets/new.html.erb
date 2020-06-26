@@ -10,7 +10,7 @@
     <% end %>
     <div class="place_frame">
       <p>場所</p>
-      <%= f.text_field :name, :placeholder => "例: 2D棟" %>
+      <%= f.collection_select :place, Place.all, :id, :name %>
     </div>
 
     <div class="comment_frame">
@@ -24,8 +24,7 @@
 
 </html>
 
-    <!--送信してからデータに保存する流れが出来ていない。
-    もし、名前が等しかったら、コメントは複数表示-->
+
 
 
 <style type="text/css">
@@ -57,13 +56,13 @@
         width: 80%;
       }
 
-      #toilet_name, #toilet_comment {
+      #toilet_place, #toilet_comment {
         font-size: 40px;
         width: 100%;
         border-radius: 10px;
       }
 
-      #toilet_name {
+      #toilet_place {
         height: 50px;
       }
 
