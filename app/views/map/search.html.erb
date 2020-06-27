@@ -6,7 +6,7 @@
 <body>
 <div id="component">
   <!--  検索画面-->
-  <%= form_with url:'/search', method: :get, local: true do |f| %>
+  <%= form_with url:'/', method: :get, local: true do |f| %>
     <%= f.text_field :keyword %>
     <%= f.submit 'Search', name: nil %>
   <% end %>
@@ -231,7 +231,7 @@
     var pinIcon = L.icon({
         iconUrl: "/images/map-marker-alt-solid.svg",
         iconSize: [40, 40],
-        color: '#ff0000' //color を変えたい
+        color: '#ff0000'
         // popupAnchor:[0,-50],
     });
 
@@ -284,6 +284,20 @@
         })
     });
 
+
+    //検索結果の表示
+    var searched_pinIcon = L.icon({
+        iconUrl: "/images/map-marker-alt-solid.svg",
+        iconSize: [40, 40],
+        // popupAnchor:[0,-50],
+    });
+
+    <% @searched_places.each do |searched_place| %>
+    L.marker(['<%=searched_place.latitude %>', '<%= searched_place.longitude %>'], {
+        icon: searched_pinIcon,
+        opacity: 0.,
+    }).bindPopup(container[0]).addTo(map);
+    <% end %>
 
 </script>
 

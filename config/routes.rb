@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'map#top'
 
   get 'toilets', to: 'toilets#index'
+  get 'search', to:'map#search'
 
   post 'post' => 'map#top'
 

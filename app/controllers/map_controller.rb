@@ -1,13 +1,15 @@
 class MapController < ApplicationController
   def top
-    # トイレの場所や情報を表示
     @places = Place.all
-
-    # トイレの口コミをDBからとってくる
-      @toiletreview = Toilet
+    @toiletreview = Toilet
   end
 
   def show
+  end
 
+  def search
+    @places = Place.all
+    @toiletreview = Toilet
+    @searched_places = Place.search(params[:keyword])
   end
 end
