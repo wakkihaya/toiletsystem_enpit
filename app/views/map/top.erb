@@ -6,7 +6,7 @@
 <body>
 <div id="component">
   <!--  検索画面-->
-  <%= form_with url:'/search', method: :get, local: true do |f| %>
+  <%= form_with url:'/search',  method: :get, local: true do |f| %>
     <%= f.text_field :keyword %>
     <%= f.submit 'Search', name: nil %>
   <% end %>
