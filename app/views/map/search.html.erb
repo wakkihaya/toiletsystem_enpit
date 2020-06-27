@@ -228,18 +228,31 @@
             maxZoom: 40.
         }).addTo(map);
 
-    var pinIcon = L.icon({
-        iconUrl: "/images/map-marker-alt-solid.svg",
-        iconSize: [40, 40],
-        color: '#ff0000'
-        // popupAnchor:[0,-50],
-    });
+
 
     // Placeデータベースの中身をmapに投影
     <% @places.each do |place| %>
-
     var container = $('<div />');
 
+    <% @searched_places.each do |searched_place| %>
+      <% if searched_place.name == place.name %>
+        var pinIcon = L.icon({
+            iconUrl: "/images/map_searched_pin.png",
+            iconSize: [50, 50],
+            // popupAnchor:[0,-50],
+        });
+        var makerOption = {icon: pinIcon, opacity: 1.0};
+      <% else %>
+        var pinIcon = L.icon({
+            iconUrl: "/images/map-marker-alt-solid.svg",
+            iconSize: [40, 40],
+            color: '#ff0000'
+            // popupAnchor:[0,-50],
+        });
+        var makerOption = {icon: pinIcon, opacity: 0.4};
+
+    <% end %>
+    <% end %>
     //レビューを見るボタン→modal表示
     container.on('click', '.button-link', function () {
 
@@ -270,10 +283,7 @@
     container.css("font-family", "Yu Gothic UI");
 
     //popupとピンを表示
-    L.marker(['<%=place.latitude %>', '<%= place.longitude %>'], {
-        icon: pinIcon,
-        opacity: 0.4,
-    }).bindPopup(container[0]).addTo(map);
+    L.marker(['<%=place.latitude %>', '<%= place.longitude %>'], makerOption).bindPopup(container[0]).addTo(map);
 
     <% end %>
 
@@ -284,22 +294,4 @@
         })
     });
 
-
-    //検索結果の表示
-    var searched_pinIcon = L.icon({
-        iconUrl: "/images/map-marker-alt-solid.svg",
-        iconSize: [40, 40],
-        // popupAnchor:[0,-50],
-    });
-
-    <% @searched_places.each do |searched_place| %>
-    L.marker(['<%=searched_place.latitude %>', '<%= searched_place.longitude %>'], {
-        icon: searched_pinIcon,
-        opacity: 0.,
-    }).bindPopup(container[0]).addTo(map);
-    <% end %>
-
 </script>
-
-
-

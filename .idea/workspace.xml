@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="69d0cc0c-8025-422f-91cf-d670f478d5d6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/map_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/map_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/place.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/place.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/map/top.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/map/top.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/map/search.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/map/search.html.erb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,13 +45,16 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hayato Waki\RubymineProjects\toiletsystem_enpit\public\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\toyah\RubymineProjects\enpit\toiletsystem\public\images" />
       <recent name="C:\Users\toyah\RubymineProjects\enpit\toiletsystem\app\assets\images" />
@@ -187,7 +188,7 @@
       <workItem from="1592910849064" duration="4597000" />
       <workItem from="1592995605060" duration="5942000" />
       <workItem from="1593149416903" duration="4621000" />
-      <workItem from="1593237798944" duration="5947000" />
+      <workItem from="1593237798944" duration="7030000" />
     </task>
     <servers />
   </component>
