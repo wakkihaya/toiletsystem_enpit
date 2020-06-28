@@ -6,7 +6,7 @@
 <body>
 <div id="component">
   <!--  検索画面-->
-  <%= form_with url:'/', method: :get, local: true do |f| %>
+  <%= form_with url: '/', method: :get, local: true do |f| %>
     <%= f.text_field :keyword %>
     <%= f.submit 'Search', name: nil %>
   <% end %>
@@ -53,24 +53,21 @@
   }
 
   #search {
-    position: absolute;
-    top: 3vh;
-    left: 0;
-    right: 0;
-    width: 80%;
-    height: 50px;
-    margin: auto;
-    border-radius: 10px;
-    font-size: 30px;
-    background: #fff;
+    padding: 2vh 10vw;
+    display: flex;
+  }
+
+  #search #keyword {
+    height: 5vh;
+    width: 90%;
+    border-radius: 5px;
   }
 
 
   #framework {
-    position: relative;
     z-index: 0;
-    height: 60vh;
-    padding: 10vh 100px 10vh 100px;
+    height: 70vh;
+    position: relative;
   }
 
   #map {
@@ -229,27 +226,26 @@
         }).addTo(map);
 
 
-
     // Placeデータベースの中身をmapに投影
     <% @places.each do |place| %>
     var container = $('<div />');
 
     <% @searched_places.each do |searched_place| %>
-      <% if searched_place.name == place.name %>
-        var pinIcon = L.icon({
-            iconUrl: "/images/map_searched_pin.png",
-            iconSize: [50, 50],
-            // popupAnchor:[0,-50],
-        });
-        var makerOption = {icon: pinIcon, opacity: 1.0};
-      <% else %>
-        var pinIcon = L.icon({
-            iconUrl: "/images/map-marker-alt-solid.svg",
-            iconSize: [40, 40],
-            color: '#ff0000'
-            // popupAnchor:[0,-50],
-        });
-        var makerOption = {icon: pinIcon, opacity: 0.4};
+    <% if searched_place.name == place.name %>
+    var pinIcon = L.icon({
+        iconUrl: "/images/map_searched_pin.png",
+        iconSize: [50, 50],
+        // popupAnchor:[0,-50],
+    });
+    var makerOption = {icon: pinIcon, opacity: 1.0};
+    <% else %>
+    var pinIcon = L.icon({
+        iconUrl: "/images/map-marker-alt-solid.svg",
+        iconSize: [40, 40],
+        color: '#ff0000'
+        // popupAnchor:[0,-50],
+    });
+    var makerOption = {icon: pinIcon, opacity: 0.4};
 
     <% end %>
     <% end %>

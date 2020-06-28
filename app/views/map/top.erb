@@ -6,7 +6,7 @@
 <body>
 <div id="component">
   <!--  検索画面-->
-  <%= form_with url:'/search',  method: :get, local: true do |f| %>
+  <%= form_with url: '/search', method: :get, local: true, id: 'search' do |f| %>
     <%= f.text_field :keyword %>
     <%= f.submit 'Search', name: nil %>
   <% end %>
@@ -53,24 +53,21 @@
   }
 
   #search {
-    position: absolute;
-    top: 3vh;
-    left: 0;
-    right: 0;
-    width: 80%;
-    height: 50px;
-    margin: auto;
-    border-radius: 10px;
-    font-size: 30px;
-    background: #fff;
+    padding: 2vh 10vw;
+    display: flex;
+  }
+
+  #search #keyword {
+    height: 5vh;
+    width: 90%;
+    border-radius: 5px;
   }
 
 
   #framework {
-    position: relative;
     z-index: 0;
-    height: 60vh;
-    padding: 10vh 100px 10vh 100px;
+    height: 70vh;
+    position: relative;
   }
 
   #map {
