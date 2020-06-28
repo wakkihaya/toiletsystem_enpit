@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69d0cc0c-8025-422f-91cf-d670f478d5d6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/map/search.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/map/search.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/map/top.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/map/top.erb" afterDir="false" />
-    </list>
+    <list default="true" id="69d0cc0c-8025-422f-91cf-d670f478d5d6" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +186,7 @@
       <workItem from="1592995605060" duration="5942000" />
       <workItem from="1593149416903" duration="4621000" />
       <workItem from="1593237798944" duration="7622000" />
-      <workItem from="1593316647525" duration="6630000" />
+      <workItem from="1593316647525" duration="7035000" />
     </task>
     <servers />
   </component>
