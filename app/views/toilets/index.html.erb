@@ -1,5 +1,4 @@
 <html>
-<div class="container">
 <div id="review_frame">
 
   <!--   場所-->
@@ -22,26 +21,6 @@
     <%= f.submit "送信", :class => 'submit' %>
   <% end %>
 </div>
-
-<div id="bottom-nav">
-  <div class="nav" id="home">
-    <%= link_to("/", class: 'nav-change') do %>
-      <i class="fas fa-home fa-3x"></i>
-      <p>Home</p>
-    <% end %>
-  </div>
-
-
-  <div class="nav" id="review">
-    <%= link_to("/toilets", class: 'nav-change') do %>
-      <i class="far fa-plus-square fa-3x"></i>
-      <p>Review</p>
-
-    <% end %>
-  </div>
-</div>
-</div>
-
 </html>
 
 
@@ -49,16 +28,12 @@
 
 <style type="text/css">
 
-  .container{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top: 10vh;
-  }
+
   #review_frame {
     font-family: "Roboto";
     width: 100vw;
-    height: 80vh;
+    height: 90vh;
+    top: 10vh;
     background: white;
     position: relative;
   }
@@ -101,7 +76,7 @@
   }
 
   .submit {
-    bottom: 10vh;
+    bottom: 5vh;
     position: absolute;
     width: 30%;
     left: 0;
@@ -112,48 +87,4 @@
     color: #fff;
     border-radius: 10px;
   }
-
-  #bottom-nav {
-    height: 10vh;
-    width: 100%;
-    /*position: absolute;*/
-    bottom: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-top: solid #D4EBF8 5px;
-    background: white;
-  }
-
-  .nav {
-    flex: 1;
-    text-align: center;
-
-  }
-
-  .nav :hover {
-    cursor: pointer;
-    background: #fff;
-    color: #000;
-  }
-
-  .nav i {
-    font-size: 5vh;
-  }
-
-
-  .nav p {
-    font-size: 2vh;
-    margin-top: 0;
-    font-weight: bold;
-    margin-bottom: 0;
-  }
-
-  .nav-change {
-    text-decoration: none;
-    color: #fff;
-  }
-
-
 </style>

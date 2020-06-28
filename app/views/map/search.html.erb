@@ -4,54 +4,34 @@
 
 <html>
 <body>
-<div class="container">
-  <div id="component">
-    <!--  検索画面-->
-    <%= form_with url: '/search', method: :get, local: true, id: 'search' do |f| %>
-      <%= f.text_field :keyword %>
-      <%= f.submit 'Search', name: nil, id: 'searched_button' %>
-    <% end %>
+<div id="component">
+  <!--  検索画面-->
+  <%= form_with url: '/search', method: :get, local: true, id: 'search' do |f| %>
+    <%= f.text_field :keyword %>
+    <%= f.submit 'Search', name: nil, id: 'searched_button' %>
+  <% end %>
 
 
 
-    <!--  地図表示-->
-    <div id="framework">
-      <div id=map>
-      </div>
-    </div>
-
-    <!--  modalウィンドウには、DBからとってきたものを載せる。-->
-    <!--  変動する値のみ、js野中でかく-->
-    <div id="modal-content">
-      <div id="place_title">
-        <p>
-        </p>
-        <a id="modal-close" class="button-close">
-          <i class="fas fa-times fa-2x"></i>
-        </a>
-      </div>
-      <ul class="reviewlist">
-      </ul>
-
+  <!--  地図表示-->
+  <div id="framework">
+    <div id=map>
     </div>
   </div>
 
-  <div id="bottom-nav">
-    <div class="nav" id="home">
-      <%= link_to("/", class: 'nav-change') do %>
-        <i class="fas fa-home fa-3x"></i>
-        <p>Home</p>
-      <% end %>
+  <!--  modalウィンドウには、DBからとってきたものを載せる。-->
+  <!--  変動する値のみ、js野中でかく-->
+  <div id="modal-content">
+    <div id="place_title">
+      <p>
+      </p>
+      <a id="modal-close" class="button-close">
+        <i class="fas fa-times fa-2x"></i>
+      </a>
     </div>
+    <ul class="reviewlist">
+    </ul>
 
-
-    <div class="nav" id="review">
-      <%= link_to("/toilets", class: 'nav-change') do %>
-        <i class="far fa-plus-square fa-3x"></i>
-        <p>Review</p>
-
-      <% end %>
-    </div>
   </div>
 </div>
 </body>
@@ -63,16 +43,12 @@
     padding: 0;
   }
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top: 10vh;
-  }
 
 
   #component {
-    height: 80vh;
+    position: relative;
+    top: 10vh;
+    height: 90vh;
   }
 
   #search {
@@ -87,14 +63,14 @@
     font-size: 4vh;
   }
 
-  #search #searched_button {
-    height: 5vh
+  #search #searched_button{
+    height: 5vh;
   }
 
 
   #framework {
     z-index: 0;
-    height: 70vh;
+    height: 80vh;
     position: relative;
   }
 
@@ -208,50 +184,6 @@
   .leaflet-popup-content-wrapper {
     font-size: 1.4rem;
   }
-
-  #bottom-nav {
-    height: 10vh;
-    width: 100%;
-    /*position: absolute;*/
-    bottom: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-top: solid #D4EBF8 5px;
-    background: white;
-  }
-
-  .nav {
-    flex: 1;
-    text-align: center;
-
-  }
-
-  .nav :hover {
-    cursor: pointer;
-    background: #fff;
-    color: #000;
-  }
-
-  .nav i {
-    font-size: 5vh;
-  }
-
-
-  .nav p {
-    font-size: 2vh;
-    margin-top: 0;
-    font-weight: bold;
-    margin-bottom: 0;
-  }
-
-  .nav-change {
-    text-decoration: none;
-    color: #fff;
-  }
-
-
 </style>
 
 <script type="text/javascript">
